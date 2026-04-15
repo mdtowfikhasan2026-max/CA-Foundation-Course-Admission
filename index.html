@@ -3,140 +3,168 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CA Foundation — Antor Academy</title>
+<title>CA Admission Foundation Course — Antor Academy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&family=Cormorant+Garamond:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#060f26; --bg2:#0b1730; --gold:#c9881e; --gold-lt:#f5c060;
-  --white:#f4f0e6; --muted:#7a86a3; --border:rgba(201,136,30,0.2);
+  --bg:#060f26; --bg2:#0b1730; --bg3:#0e1e3a; --gold:#c9881e; --gold-lt:#f5c060;
+  --gold-dim:rgba(201,136,30,0.15); --white:#f4f0e6; --muted:#7a86a3; --border:rgba(201,136,30,0.2);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-body{ background:var(--bg); color:var(--white); font-family:'Hind Siliguri',sans-serif; line-height:1.6; padding:20px; }
-.container{ max-width:800px; margin:0 auto; }
+html{scroll-behavior:smooth;}
+body{ background:var(--bg); color:var(--white); font-family:'Hind Siliguri',sans-serif; line-height:1.75; overflow-x:hidden; }
 
-/* Header & Sections */
-header{ text-align:center; padding:40px 0; }
-.logo-text{ font-family:'Cormorant Garamond',serif; font-size:2.5rem; color:var(--gold-lt); font-weight:800; }
-.hero{ background:var(--bg2); border:1px solid var(--border); border-radius:20px; padding:30px; text-align:center; margin-bottom:30px; }
-.hero h1{ font-size:1.8rem; color:var(--gold-lt); margin-bottom:10px; }
+/* NAV */
+nav{ position:fixed;top:0;left:0;right:0;z-index:999; background:rgba(6,15,38,0.9); backdrop-filter:blur(14px); border-bottom:1px solid var(--border); display:flex;align-items:center;justify-content:space-between; padding:13px 28px; }
+.nav-brand{ font-family:'Cormorant Garamond',serif; font-size:1.2rem;font-weight:800; color:var(--white);text-decoration:none; display:flex;align-items:center;gap:8px; }
+.nav-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+.nav-btn{ background:linear-gradient(135deg,var(--gold),#a06b10); color:#fff;font-weight:700;font-size:14px; padding:8px 22px;border-radius:40px;text-decoration:none; }
 
-/* Policy Accordion */
-.policy-box{ border:1px solid var(--border); border-radius:12px; margin-bottom:25px; overflow:hidden; }
-.policy-btn{ width:100%; background:var(--bg2); border:none; padding:15px; color:var(--gold-lt); display:flex; justify-content:space-between; cursor:pointer; font-family:'Cormorant Garamond',serif; font-size:1.1rem; outline:none; }
+/* HERO */
+.hero{ position:relative; padding:140px 24px 80px; text-align:center; background: radial-gradient(ellipse 100% 50% at 50% -5%,rgba(201,136,30,0.2),transparent 65%), var(--bg); }
+.hero h1{ font-family:'Cormorant Garamond',serif; font-size:clamp(2.5rem,7vw,4.5rem); font-weight:800; line-height:1.1; margin-bottom:20px; }
+.hero h1 em{ font-style:italic; color:var(--gold-lt); }
 
-/* Admission Form */
-.form-card{ background:var(--bg2); padding:30px; border-radius:20px; border:1px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-.form-hd{ font-family:'Cormorant Garamond',serif; font-size:1.9rem; font-weight:800; color:var(--gold-lt); text-align:center; margin-bottom:5px; }
-.form-sub{ text-align:center; color:var(--muted); font-size:0.9rem; margin-bottom:25px; }
-.frow{ display:flex; gap:15px; margin-bottom:15px; flex-wrap:wrap; }
-.fgrp{ flex:1; min-width:200px; display:flex; flex-direction:column; gap:8px; margin-bottom:15px; }
-label{ font-size:0.9rem; color:var(--gold-lt); font-weight:600; }
-input, select, textarea{ background:var(--bg); border:1px solid var(--border); padding:14px; color:#fff; border-radius:8px; outline:none; font-family:'Hind Siliguri', sans-serif; }
-input:focus{ border-color:var(--gold-lt); }
+/* CONTENT SECTION */
+section{ padding:80px 24px; }
+.container{ max-width:1000px; margin:0 auto; }
+.sec-title{ text-align:center; font-family:'Cormorant Garamond',serif; font-size:2.5rem; margin-bottom:40px; color:var(--gold-lt); }
 
-/* Agreement Checkbox */
-.ack-box{ background:rgba(255,55,55,0.05); border:1px solid rgba(255,55,55,0.2); padding:15px; border-radius:10px; margin:20px 0; }
-.ack-label{ display:flex; gap:10px; cursor:pointer; font-size:0.85rem; line-height:1.4; color:var(--white); }
+/* GRID STYLE */
+.features-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:15px; }
+.f-item{ background:rgba(255,255,255,0.03); border:1px solid var(--border); padding:15px 20px; border-radius:12px; display:flex; align-items:center; gap:12px; font-size:0.95rem; }
+.f-item::before{ content:'✅'; }
 
-.sub-btn{ width:100%; background:linear-gradient(45deg, var(--gold), var(--gold-lt)); border:none; padding:18px; border-radius:10px; color:#000; font-weight:800; cursor:pointer; font-size:1.1rem; text-transform:uppercase; transition:0.3s; }
-.sub-btn:disabled{ opacity:0.6; cursor:not-allowed; }
+/* PRICING */
+.pricing-box{ background:var(--bg2); border:2px solid var(--gold); border-radius:20px; padding:50px 30px; text-align:center; margin:40px 0; }
+.price-tag{ font-size:4rem; font-weight:800; color:var(--white); font-family:'Cormorant Garamond',serif; }
+.seat-badge{ background:var(--gold); color:#000; padding:5px 15px; border-radius:50px; font-weight:bold; font-size:0.9rem; }
 
-#success-box{ text-align:center; display:none; padding:40px 20px; }
-.btn-wa{ display:inline-block; background:#25D366; color:#fff; padding:15px 30px; border-radius:10px; text-decoration:none; margin-top:20px; font-weight:bold; font-size:1.1rem; }
+/* FORM & POLICY */
+.policy-box{ border:1px solid var(--border); border-radius:12px; margin-bottom:30px; overflow:hidden; }
+.policy-btn{ width:100%; background:var(--bg2); border:none; padding:15px; color:var(--gold-lt); display:flex; justify-content:space-between; cursor:pointer; font-family:'Cormorant Garamond',serif; font-size:1.1rem; }
+.form-card{ background:rgba(255,255,255,0.035); border:1px solid var(--border); border-radius:22px; padding:40px; max-width:700px; margin:0 auto; }
+.frow{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:15px; }
+.fgrp label{ display:block; color:var(--gold-lt); margin-bottom:8px; font-size:0.9rem; }
+.fgrp input, .fgrp select{ width:100%; background:rgba(255,255,255,0.05); border:1px solid var(--border); padding:12px; border-radius:10px; color:#fff; outline:none; }
+.ack-box{ background:rgba(255,55,55,0.05); border:1px solid rgba(255,55,55,0.15); padding:15px; border-radius:10px; margin:20px 0; font-size:0.85rem; }
+.sub-btn{ width:100%; background:linear-gradient(135deg,var(--gold),#8e5a0c); color:#fff; font-weight:800; padding:18px; border-radius:12px; border:none; cursor:pointer; text-transform:uppercase; }
 
-@media (max-width:600px){ .frow{ flex-direction:column; } }
+#success-box{ text-align:center; display:none; }
+.btn-wa{ background:#25D366; color:#fff; padding:15px 30px; border-radius:10px; display:inline-block; text-decoration:none; font-weight:bold; margin-top:20px; }
+
+@media(max-width:600px){ .frow{grid-template-columns:1fr;} }
 </style>
 </head>
 <body>
 
-<div class="container">
-  <header>
-    <div class="logo-text">Antor Academy</div>
-    <p style="letter-spacing:2px; color:var(--muted); font-size:0.8rem;">Chartered Accountancy Journey</p>
-  </header>
+<nav>
+  <a class="nav-brand" href="#"><span class="nav-dot"></span>CA Journey — Antor Academy</a>
+  <a class="nav-btn" href="#enrollment">ভর্তি হও →</a>
+</nav>
 
-  <section class="hero">
-    <h1>CA Foundation Certificate Level</h1>
-    <p style="color:var(--muted);">কোর্স ফি: ১,৫০০৳ (বিকাশ/নগদ পার্সোনাল: 01945135571)</p>
-  </section>
+<section class="hero">
+  <div class="container">
+    <p style="letter-spacing:3px; color:var(--gold-lt); margin-bottom:10px;">WELCOME TO CA JOURNEY BANGLADESH</p>
+    <h1>CA Admission <em>Foundation Course</em></h1>
+    <p style="max-width:700px; margin:0 auto; color:var(--muted);">স্বপ্নের CA ক্যারিয়ারে সফলতার প্রথম ধাপ নিন সঠিক প্রস্তুতির মাধ্যমে!</p>
+  </div>
+</section>
 
-  <div class="policy-box">
-    <button class="policy-btn" onclick="togglePolicy()">
-      <span>Course Refund Policy (Click to Read)</span>
-      <span id="p-icon">▼</span>
-    </button>
-    <div id="p-content" style="display:none; padding:15px; font-size:0.85rem; color:var(--muted); border-top:1px solid var(--border); background:rgba(255,255,255,0.02);">
-      Our courses consist of <strong>pre-recorded digital content</strong>. Since full access to all lectures and materials is granted immediately upon enrollment, we maintain a <strong>No-Refund Policy</strong>. Please evaluate the course quality via our Free Demo Classes before proceeding with the payment. By enrolling, you agree to these terms.
+<section id="course-details">
+  <div class="container">
+    <h2 class="sec-title">কোর্সে যা যা থাকছে</h2>
+    <div class="features-grid">
+      <div class="f-item">CA সম্পর্কে পূর্ণ ধারণা</div>
+      <div class="f-item">সঠিক ফার্ম বেছে নেওয়ার কৌশল</div>
+      <div class="f-item">Professional CV তৈরির টিউটোরিয়াল</div>
+      <div class="f-item">লিখিত পরীক্ষার প্রস্তুতি (Written)</div>
+      <div class="f-item">মৌখিক পরীক্ষার প্রস্তুতি (Viva)</div>
+      <div class="f-item">CA Subject সম্পর্কে তথ্য</div>
+      <div class="f-item">ICAB Registration নির্দেশনা</div>
+      <div class="f-item">ফার্মে ভর্তি হওয়া পর্যন্ত সহায়তা</div>
+      <div class="f-item">Prerecorded Exclusive Classes</div>
+      <div class="f-item">Google Classroom অ্যাক্সেস</div>
+      <div class="f-item">Foundation Book (PDF)</div>
+      <div class="f-item">Class Lecture Sheet (PDF)</div>
     </div>
   </div>
+</section>
 
-  <div class="form-card" id="form-container">
-    <div class="form-hd">📋 Enrollment Form</div>
-    <div class="form-sub">পেমেন্ট করার পর নিচের তথ্যগুলো দিয়ে ফর্মটি পূরণ করো।</div>
-
-    <div class="frow">
-      <div class="fgrp">
-        <label>Full Name *</label>
-        <input type="text" id="fn" placeholder="তোমার পুরো নাম">
-      </div>
-      <div class="fgrp">
-        <label>Mobile Number *</label>
-        <input type="tel" id="fp" placeholder="01XXXXXXXXX">
-      </div>
+<section id="enrollment">
+  <div class="container">
+    <div class="pricing-box">
+      <span class="seat-badge">সিট সংখ্যা সীমিত – মাত্র ২৫ জন</span>
+      <p style="margin-top:20px; color:var(--muted);">সম্পূর্ণ কোর্স ফি</p>
+      <div class="price-tag">৳ ২,৫০০</div>
+      <p style="color:var(--gold-lt); margin-top:10px;">পেমেন্ট করুন (Bkash Personal): <strong>01945-135571</strong></p>
+      <p style="font-size:0.8rem; color:var(--muted);">(Send Money করার পর নিচের ফর্মটি পূরণ করুন)</p>
     </div>
 
-    <div class="frow">
-      <div class="fgrp">
-        <label>Payment Method *</label>
-        <select id="fm">
-          <option value="">Select Method</option>
-          <option>bKash</option>
-          <option>Nagad</option>
-        </select>
-      </div>
-      <div class="fgrp">
-        <label>Transaction ID *</label>
-        <input type="text" id="ft" placeholder="যেমন: 8N3A1K2B7P">
+    <div class="policy-box">
+      <button class="policy-btn" onclick="togglePolicy()">
+        <span>Course Refund Policy (Click to Read)</span>
+        <span id="p-icon">▼</span>
+      </button>
+      <div id="p-content" style="display:none; padding:20px; background:rgba(255,255,255,0.02); border-top:1px solid var(--border);">
+        <p style="color:var(--muted); font-size:0.9rem;">
+          Our courses consist of <strong>pre-recorded digital content</strong>. Since full access to all lectures and materials is granted immediately upon enrollment, we maintain a <strong>No-Refund Policy</strong>. By enrolling, you agree to these terms.
+        </p>
       </div>
     </div>
 
-    <div class="fgrp">
-      <label>Current Education Level</label>
-      <select id="fed">
-        <option>Graduation চলছে</option>
-        <option>Graduation সম্পন্ন</option>
-        <option>HSC পরীক্ষার্থী / সম্পন্ন</option>
-        <option>অন্যান্য</option>
-      </select>
+    <div class="form-card" id="form-container">
+      <h3 style="text-align:center; margin-bottom:25px; font-family:'Cormorant Garamond',serif; font-size:1.8rem;">📋 ভর্তি ফর্ম</h3>
+      <div class="frow">
+        <div class="fgrp">
+          <label>পুরো নাম *</label>
+          <input type="text" id="fn" placeholder="যেমন: আহমেদ রাহাত">
+        </div>
+        <div class="fgrp">
+          <label>মোবাইল নম্বর *</label>
+          <input type="tel" id="fp" placeholder="01XXXXXXXXX">
+        </div>
+      </div>
+      <div class="frow">
+        <div class="fgrp">
+          <label>পেমেন্ট মাধ্যম *</label>
+          <select id="fm">
+            <option value="">বেছে নাও</option>
+            <option>bKash</option>
+            <option>Nagad</option>
+          </select>
+        </div>
+        <div class="fgrp">
+          <label>Transaction ID *</label>
+          <input type="text" id="ft" placeholder="TXN ID">
+        </div>
+      </div>
+
+      <div class="ack-box">
+        <label style="display:flex; gap:10px; cursor:pointer; line-height:1.4;">
+          <input type="checkbox" id="fack" style="width:18px; height:18px; margin-top:3px;">
+          <span>I hereby acknowledge that I will strictly abide by all the rules. Any involvement in <strong>course piracy</strong> or violation will lead to legal action or termination of access. I agree to the Refund Policy.</span>
+        </label>
+      </div>
+
+      <button class="sub-btn" id="sbtn" onclick="handleEnroll()">✅ সাবমিট করো — ভর্তি নিশ্চিত করো</button>
     </div>
 
-    <div class="ack-box">
-      <label class="ack-label">
-        <input type="checkbox" id="fack" style="width:20px; height:20px; margin-top:2px;">
-        <span>
-          I hereby acknowledge that I will strictly abide by all the rules and regulations of the course. Any involvement in <strong>course piracy</strong> (unauthorized recording or sharing) or violation of guidelines will grant the authorities the right to <strong>take legal action</strong> or terminate my access immediately. I have read and agree to the <strong>Refund Policy</strong>.
-        </span>
-      </label>
+    <div id="success-box" class="form-card">
+      <div style="font-size:3.5rem; margin-bottom:15px;">🎉</div>
+      <h2 style="color:var(--gold-lt);">আবেদন সফল হয়েছে!</h2>
+      <p style="margin:15px 0;">তথ্যগুলো Google Sheet-এ জমা হয়েছে। এখন স্ক্রিনশটটি হোয়াটসঅ্যাপে পাঠান।</p>
+      <a id="wa-link" class="btn-wa" href="#" target="_blank">💬 WhatsApp-এ স্ক্রিনশট পাঠান</a>
     </div>
-
-    <button class="sub-btn" id="sbtn" onclick="submitForm()">✅ Confirm Enrollment</button>
   </div>
+</section>
 
-  <div id="success-box" class="form-card">
-    <div style="font-size:3rem; margin-bottom:15px;">🎉</div>
-    <h2 style="color:var(--gold-lt);">Admission Successful!</h2>
-    <p style="margin:15px 0;">আপনার তথ্য আমাদের Google Sheet-এ জমা হয়েছে। এখন পেমেন্টের স্ক্রিনশটটি হোয়াটসঅ্যাপে পাঠিয়ে ভর্তি নিশ্চিত করুন।</p>
-    <a id="wa-link" class="btn-wa" href="#" target="_blank">💬 Send Screenshot on WhatsApp</a>
-  </div>
-
-  <footer style="text-align:center; margin-top:40px; color:var(--muted); font-size:0.8rem; padding-bottom:20px;">
-    &copy; 2026 Antor Academy | All Rights Reserved.
-  </footer>
-</div>
+<footer style="text-align:center; padding:40px; color:var(--muted); border-top:1px solid var(--border);">
+  <p>&copy; 2026 Antor Academy | সঠিক গাইডলাইন + দক্ষ মেন্টর = নিশ্চিত সফলতা</p>
+</footer>
 
 <script>
-// Toggle Refund Policy
 function togglePolicy() {
   const c = document.getElementById('p-content');
   const i = document.getElementById('p-icon');
@@ -144,33 +172,23 @@ function togglePolicy() {
   i.style.transform = c.style.display === 'block' ? 'rotate(180deg)' : 'rotate(0deg)';
 }
 
-// Submit Form to Google Sheets
-async function submitForm() {
+async function handleEnroll() {
   const name = document.getElementById('fn').value.trim();
   const phone = document.getElementById('fp').value.trim();
   const method = document.getElementById('fm').value;
   const txn = document.getElementById('ft').value.trim();
-  const edu = document.getElementById('fed').value;
   const ack = document.getElementById('fack').checked;
 
-  if(!name || !phone || !method || !txn) { 
-    alert('অনুগ্রহ করে সবগুলো ঘর পূরণ করুন।'); 
-    return; 
-  }
-  if(!ack) { 
-    alert('শর্তাবলীতে টিক দিয়ে সম্মতি দিন।'); 
-    return; 
-  }
+  if(!name || !phone || !method || !txn) { alert('সবগুলো ঘর পূরণ করুন।'); return; }
+  if(!ack) { alert('শর্তাবলীতে টিক দিন।'); return; }
 
   const btn = document.getElementById('sbtn');
   btn.disabled = true;
-  btn.innerText = "⏳ Processing...";
+  btn.innerText = "Processing...";
 
-  // Your Google Apps Script URL
   const scriptURL = 'https://script.google.com/macros/s/AKfycbxK1uJXZ82Ap5ltF73rZaptwHD28JuvWqkvdfhNu5SnNBqXcgfPgdGTQxQ_VZ5gfr7RJA/exec';
 
   try {
-    // Sending data via URLSearchParams (CORS bypass for Google Apps Script)
     await fetch(scriptURL, {
       method: 'POST',
       mode: 'no-cors',
@@ -184,28 +202,19 @@ async function submitForm() {
       })
     });
 
-    // Prepare WhatsApp Message
-    let msg = `🎓 *CA Foundation Admission*\n\n`;
-    msg += `👤 Name: ${name}\n`;
-    msg += `📱 Phone: ${phone}\n`;
-    msg += `💳 Method: ${method}\n`;
-    msg += `🔖 TXN ID: ${txn}\n`;
-    msg += `⚖️ Policy: I agree to all terms and anti-piracy rules.`;
-
+    let msg = `🎓 *CA Foundation Admission*\n👤 নাম: ${name}\n📱 নম্বর: ${phone}\n💳 মাধ্যম: ${method}\n🔖 TXN ID: ${txn}\n✅ আমি সকল শর্তে সম্মত।`;
     const waURL = `https://wa.me/8801945135571?text=${encodeURIComponent(msg)}`;
     
-    // UI Update
     document.getElementById('form-container').style.display = 'none';
     document.getElementById('success-box').style.display = 'block';
     document.getElementById('wa-link').href = waURL;
     
-    // Redirect to WhatsApp after 1 second
     setTimeout(() => { window.open(waURL, '_blank'); }, 1000);
 
-  } catch (error) {
-    alert('Error! অনুগ্রহ করে আবার চেষ্টা করুন।');
+  } catch (e) {
+    alert('ত্রুটি হয়েছে, আবার চেষ্টা করুন।');
     btn.disabled = false;
-    btn.innerText = "✅ Confirm Enrollment";
+    btn.innerText = "✅ সাবমিট করো";
   }
 }
 </script>
