@@ -696,7 +696,7 @@ async function doSubmit(){
   btn.textContent = '⏳ পাঠানো হচ্ছে...';
 
   const formData = new FormData();
-  // আপনার নতুন ইমেইল আপডেট করা হয়েছে
+  // আপনার নতুন ইমেইল আপডেট করা হয়েছে (mdtowfikhasan2026@gmail.com)
   formData.append('_replyto', 'mdtowfikhasan2026@gmail.com'); 
   formData.append('নাম', name);
   formData.append('মোবাইল', phone);
@@ -708,7 +708,7 @@ async function doSubmit(){
   formData.append('screenshot', file);
 
   try {
-    // আপনার নতুন Formspree Endpoint আপডেট করা হয়েছে
+    // আপনার নতুন Formspree Endpoint আপডেট করা হয়েছে (mlgagbqd)
     const res = await fetch('https://formspree.io/f/mlgagbqd', { 
       method: 'POST',
       body: formData,
@@ -721,7 +721,7 @@ async function doSubmit(){
       txt += `📱 নম্বর: ${phone}\n`;
       if(email) txt += `📧 ইমেইল: ${email}\n`;
       txt += `💳 পেমেন্ট: ${method}\n`;
-      txt += `🔖 TXN ID: ${txn}\n`;
+      txt += `🔖 TvXN ID: ${txn}\n`;
       if(edu)   txt += `🎓 শিক্ষা: ${edu}\n`;
       if(msg)   txt += `💬 বার্তা: ${msg}\n`;
       txt += `\n✅ Screenshot পেমেন্টের প্রমাণ হিসেবে পাঠাচ্ছি।`;
@@ -746,4 +746,4 @@ async function doSubmit(){
 }
 </script>
 </body>
-</html>
+  </html>
