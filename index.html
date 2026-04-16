@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CA Foundation — CA Journey Antor Academy</title>
+<title>CA Foundation & Admission Course — CA Journey Antor Academy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
 <style>
@@ -88,6 +88,17 @@ nav{
 }
 .pulse{width:7px;height:7px;border-radius:50%;background:var(--gold-lt);animation:blink 1.8s infinite;}
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:.25;}}
+.course-name-tag{
+  display:inline-block;
+  background:linear-gradient(135deg,rgba(201,136,30,0.25),rgba(201,136,30,0.08));
+  border:1px solid rgba(201,136,30,0.5);
+  color:var(--gold-lt);
+  font-size:.82rem;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;
+  padding:6px 18px;border-radius:6px;
+  margin-bottom:18px;
+  animation:up .55s .04s ease both;
+}
 .hero h1{
   font-family:'Cormorant Garamond',serif;
   font-size:clamp(2.8rem,8.5vw,5.5rem);
@@ -240,8 +251,38 @@ section{position:relative;z-index:1;padding:92px 24px;}
   padding:4px 14px;border-radius:30px;
 }
 
+/* REVIEWS */
+.reviews-sec{background:var(--bg2);}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;}
+.review-card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid var(--border);border-radius:16px;
+  padding:26px 24px;
+  position:relative;
+  transition:border-color .2s,transform .2s;
+}
+.review-card:hover{border-color:rgba(201,136,30,0.4);transform:translateY(-3px);}
+.review-card::before{
+  content:'\201C';
+  position:absolute;top:14px;right:20px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:4rem;font-weight:800;
+  color:rgba(201,136,30,0.18);line-height:1;
+}
+.review-stars{color:var(--gold-lt);font-size:1rem;margin-bottom:12px;letter-spacing:2px;}
+.review-text{font-size:.9rem;color:rgba(244,240,230,0.82);line-height:1.65;margin-bottom:18px;}
+.review-author{display:flex;align-items:center;gap:12px;}
+.review-av{
+  width:40px;height:40px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),#8e5a0c);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:.85rem;color:#fff;flex-shrink:0;
+}
+.review-name{font-weight:700;font-size:.88rem;color:var(--white);}
+.review-sub{font-size:.75rem;color:var(--muted);}
+
 /* PRICING */
-.pricing{background:var(--bg2);}
+.pricing{background:var(--bg);}
 .price-box{
   max-width:460px;margin:0 auto;
   background:linear-gradient(135deg,rgba(201,136,30,0.1),rgba(201,136,30,0.03));
@@ -350,6 +391,7 @@ section{position:relative;z-index:1;padding:92px 24px;}
   transition:transform .2s,box-shadow .2s;margin-top:8px;
 }
 .sub-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,136,30,0.45);}
+.sub-btn:disabled{opacity:.6;cursor:not-allowed;transform:none;}
 #success-box{display:none;text-align:center;padding:52px 24px;}
 #success-box .tick{font-size:3.5rem;margin-bottom:18px;}
 #success-box h3{
@@ -357,6 +399,45 @@ section{position:relative;z-index:1;padding:92px 24px;}
   font-size:2rem;font-weight:800;color:#fff;margin-bottom:10px;
 }
 #success-box p{color:var(--muted);margin-bottom:28px;}
+
+/* REFUND POLICY */
+.refund-box{
+  background:linear-gradient(135deg,rgba(176,30,30,0.13),rgba(201,136,30,0.08));
+  border:1px solid rgba(176,30,30,0.38);
+  border-left:4px solid #c0392b;
+  border-radius:12px;
+  padding:20px 22px;
+  margin-bottom:20px;
+}
+.refund-box-hd{
+  display:flex;align-items:center;gap:9px;
+  font-size:.88rem;font-weight:800;
+  color:#ff8e8e;letter-spacing:.5px;text-transform:uppercase;
+  margin-bottom:12px;
+}
+.refund-item{
+  display:flex;align-items:flex-start;gap:9px;
+  font-size:.83rem;color:rgba(244,240,230,0.8);
+  line-height:1.6;margin-bottom:8px;
+}
+.refund-item:last-child{margin-bottom:0;}
+.refund-dot{color:#e74c3c;flex-shrink:0;margin-top:4px;}
+
+/* CHECKBOX */
+.check-wrap{
+  display:flex;align-items:flex-start;gap:12px;
+  background:rgba(201,136,30,0.07);
+  border:1px solid var(--border);border-radius:10px;
+  padding:14px 16px;margin-bottom:20px;cursor:pointer;
+  transition:background .2s,border-color .2s;
+}
+.check-wrap:hover{background:rgba(201,136,30,0.12);border-color:rgba(201,136,30,0.4);}
+.check-wrap input[type=checkbox]{
+  width:18px;height:18px;flex-shrink:0;margin-top:3px;
+  accent-color:var(--gold);cursor:pointer;
+}
+.check-txt{font-size:.84rem;color:var(--muted);line-height:1.55;}
+.check-txt strong{color:var(--gold-lt);}
 
 /* FOOTER */
 footer{
@@ -381,44 +462,6 @@ footer{
 .soc-link:hover{background:var(--gold-dim);border-color:var(--gold);}
 .foot-copy{font-size:.78rem;color:var(--muted);}
 
-/* REFUND POLICY BOX */
-.refund-box{
-  background:linear-gradient(135deg,rgba(176,30,30,0.13),rgba(201,136,30,0.10));
-  border:1px solid rgba(176,30,30,0.4);
-  border-left:4px solid #c0392b;
-  border-radius:12px;
-  padding:20px 22px;
-  margin-bottom:20px;
-}
-.refund-box-hd{
-  display:flex;align-items:center;gap:9px;
-  font-size:.88rem;font-weight:800;
-  color:#ff8e8e;letter-spacing:.5px;text-transform:uppercase;
-  margin-bottom:10px;
-}
-.refund-box-hd span{font-size:1.1rem;}
-.refund-item{
-  display:flex;align-items:flex-start;gap:9px;
-  font-size:.83rem;color:rgba(244,240,230,0.78);
-  line-height:1.55;margin-bottom:7px;
-}
-.refund-item:last-child{margin-bottom:0;}
-.refund-dot{color:#e74c3c;font-size:.7rem;margin-top:5px;flex-shrink:0;}
-/* CHECKBOX */
-.check-wrap{
-  display:flex;align-items:flex-start;gap:12px;
-  background:rgba(201,136,30,0.07);
-  border:1px solid var(--border);border-radius:10px;
-  padding:14px 16px;margin-bottom:20px;cursor:pointer;
-  transition:background .2s,border-color .2s;
-}
-.check-wrap:hover{background:rgba(201,136,30,0.12);border-color:rgba(201,136,30,0.4);}
-.check-wrap input[type=checkbox]{
-  width:18px;height:18px;flex-shrink:0;margin-top:3px;
-  accent-color:var(--gold);cursor:pointer;
-}
-.check-txt{font-size:.84rem;color:var(--muted);line-height:1.55;}
-.check-txt strong{color:var(--gold-lt);}
 @keyframes up{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
 
 @media(max-width:600px){
@@ -430,11 +473,13 @@ footer{
   .form-card{padding:26px 18px;}
   .price-box{padding:36px 22px;}
   .inst-av{width:90px;height:90px;font-size:2.1rem;}
+  .reviews-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <a class="nav-brand" href="#">
     <span class="nav-dot"></span>CA Journey — Antor Academy
@@ -442,8 +487,10 @@ footer{
   <a class="nav-btn" href="#enrollment">ভর্তি হও →</a>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-badge"><span class="pulse"></span>ভর্তি চলছে — সিট সীমিত মাত্র ২৫ জন!</div>
+  <div class="course-name-tag">📚 CA Foundation &amp; Admission Course</div>
   <h1>শুরু হোক তোমার<br><em>CA Journey</em></h1>
   <p class="hero-sub">স্বপ্নের CA ক্যারিয়ার শুরু হোক সঠিক গাইডলাইন ও প্রফেশনাল প্রস্তুতির মাধ্যমে — ভর্তি থেকে CA Firm পর্যন্ত পূর্ণ সহায়তা!</p>
   <div class="hero-stats">
@@ -459,10 +506,11 @@ footer{
   <div class="scroll-hint">scroll</div>
 </section>
 
+<!-- COURSE INCLUDES -->
 <section id="course">
   <div class="container">
     <div class="sec-label">কোর্স কারিকুলাম</div>
-    <h2 class="sec-title">কোর্সে যা যা থাকছে</h2>
+    <h2 class="sec-title">CA Foundation &amp; Admission Course-এ যা যা থাকছে</h2>
     <div class="divline"></div>
     <div class="inc-grid">
       <div class="inc-card"><span class="inc-em">📖</span><span class="inc-tx">CA সম্পর্কে পূর্ণ ধারণা — ক্যারিয়ার, সুযোগ ও বাস্তবতা</span></div>
@@ -479,6 +527,7 @@ footer{
   </div>
 </section>
 
+<!-- EXTRAS -->
 <section class="extras">
   <div class="container">
     <div class="sec-label">বাড়তি সুবিধা</div>
@@ -509,6 +558,7 @@ footer{
   </div>
 </section>
 
+<!-- DEMO CLASS -->
 <section class="demo" id="demo">
   <div class="container">
     <div class="sec-label">ফ্রি ডেমো</div>
@@ -532,6 +582,7 @@ footer{
   </div>
 </section>
 
+<!-- INSTRUCTOR -->
 <section>
   <div class="container">
     <div class="sec-label">তোমার মেন্টর</div>
@@ -554,12 +605,69 @@ footer{
   </div>
 </section>
 
+<!-- STUDENT REVIEWS -->
+<section class="reviews-sec">
+  <div class="container">
+    <div class="sec-label">শিক্ষার্থীদের মতামত</div>
+    <h2 class="sec-title">তারা কী বলছে?</h2>
+    <p class="sec-sub">CA Foundation & Admission Course করে যারা সফলভাবে CA Firm-এ যোগ দিয়েছে, তাদের কথা।</p>
+    <div class="divline"></div>
+    <div class="reviews-grid">
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">
+          আমি CA নিয়ে একদমই কিছু জানতাম না — কোথায় শুরু করব, কোন ফার্মে যাব, Viva-তে কী জিজ্ঞেস করবে — সবটাই ভীতিকর লাগছিল। এই কোর্স করার পরে সব কিছু crystal clear হয়ে গেছে। প্রথম attempt-এই ভালো একটা ফার্মে চান্স পেয়েছি।
+        </p>
+        <div class="review-author">
+          <div class="review-av">রা</div>
+          <div>
+            <div class="review-name">রাফসান আহমেদ</div>
+            <div class="review-sub">BBA, ঢাকা কলেজ · </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">
+          Written exam-এর জন্য Top 300 Interview Questions আর Lecture Sheet দুটো মিলিয়ে পড়েছিলাম। প্রায় ৭০% প্রশ্ন কমন পড়েছে! Viva-তেও ইন্সট্রাক্টর যেভাবে প্র্যাকটিস করিয়েছেন সেটাই কাজে লেগেছে। Pre-recorded হওয়ায় নিজের সময়মতো পড়তে পেরেছি।
+        </p>
+        <div class="review-author">
+          <div class="review-av">নি</div>
+          <div>
+            <div class="review-name">নিশাত জাহান</div>
+            <div class="review-sub">Commerce, ভিকারুননিসা কলেজ </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">
+          মাত্র ২,৫০০ টাকায় এতকিছু পাব ভাবিনি। Foundation Book, Lecture Sheet, আর Google Classroom-এ সব সাজানো গোছানো। ইন্সট্রাক্টর প্যানেলের গাইডলাইন ছাড়া হয়তো আরও ৬ মাস ঘুরতাম। CA Journey-র কোর্স না করলে এই সুযোগ হতো না।
+        </p>
+        <div class="review-author">
+          <div class="review-av">তা</div>
+          <div>
+            <div class="review-name">তানভীর হাসান</div>
+            <div class="review-sub">Accounting, জগন্নাথ বিশ্ববিদ্যালয় · p</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
 <section class="pricing">
   <div class="container">
     <div class="sec-label">কোর্স ফি</div>
     <h2 class="sec-title">বিনিয়োগ করো তোমার ভবিষ্যতে</h2>
     <div class="divline"></div>
     <div class="price-box">
+      <div style="font-size:.8rem;color:var(--gold);font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">CA Foundation &amp; Admission Course</div>
       <div class="price-amt"><sup>৳</sup>২,৫০০</div>
       <div class="price-note">একবারের পেমেন্ট — সম্পূর্ণ কোর্স অ্যাক্সেস</div>
       <div class="seat-warn">⚠️ সিট সংখ্যা মাত্র <strong>২৫ জন!</strong> — দেরি করলে সুযোগ হাতছাড়া হতে পারে</div>
@@ -568,6 +676,7 @@ footer{
   </div>
 </section>
 
+<!-- ENROLLMENT -->
 <section class="enroll-sec" id="enrollment">
   <div class="container">
     <div class="sec-label">পেমেন্ট ও ভর্তি</div>
@@ -602,7 +711,7 @@ footer{
     <div class="form-card">
       <div id="form-body">
         <div class="form-hd">📋 ভর্তি ফর্ম</div>
-        <div class="form-sub">পেমেন্ট করার পর নিচের ফর্মটি পূরণ করো। পেমেন্টের Screenshot সাবমিট করা বাধ্যতামূলক।</div>
+        <div class="form-sub">পেমেন্ট করার পর নিচের ফর্মটি পূরণ করো। পেমেন্টের Screenshot সহ WhatsApp-এ পাঠাতে বলা হবে।</div>
 
         <div class="frow">
           <div class="fgrp">
@@ -641,19 +750,6 @@ footer{
         </div>
 
         <div class="fgrp">
-          <label>পেমেন্ট Screenshot *</label>
-          <div class="upload-box" id="upbox">
-            <input type="file" id="ff" accept="image/*" onchange="pickFile(this)">
-            <div style="font-size:2rem;margin-bottom:8px;">📸</div>
-            <div style="font-size:.9rem;color:var(--muted);">
-              <strong style="color:var(--gold-lt);">ছবি আপলোড করো</strong> বা এখানে ট্যাপ করো<br>
-              <span style="font-size:.78rem;">JPG / PNG / WEBP — সর্বোচ্চ ৫MB</span>
-            </div>
-            <div id="fname-show"></div>
-          </div>
-        </div>
-
-        <div class="fgrp">
           <label>বর্তমান শিক্ষাগত যোগ্যতা</label>
           <select id="fed">
             <option value="">বেছে নাও</option>
@@ -669,28 +765,28 @@ footer{
           <textarea id="fmsg" rows="3" placeholder="CA নিয়ে কোনো প্রশ্ন থাকলে লিখতে পারো..."></textarea>
         </div>
 
-        <!-- REFUND POLICY BOX -->
+        <!-- REFUND POLICY -->
         <div class="refund-box">
           <div class="refund-box-hd"><span>⚖️</span> Refund Policy &amp; Terms of Use</div>
           <div class="refund-item">
-            <span class="refund-dot">■</span>
+            <span class="refund-dot">▪</span>
             <span><strong style="color:#ff8e8e;">No Refund Policy:</strong> এই কোর্সটি সম্পূর্ণ ডিজিটাল কনটেন্ট। ভর্তি নিশ্চিত হওয়ার পর কোনো অবস্থাতেই টাকা ফেরত দেওয়া সম্ভব নয়। ভর্তির পূর্বে কোর্সের বিষয়বস্তু সম্পর্কে নিশ্চিত হয়ে নিন।</span>
           </div>
           <div class="refund-item">
-            <span class="refund-dot">■</span>
+            <span class="refund-dot">▪</span>
             <span><strong style="color:#ff8e8e;">Anti-Piracy Notice:</strong> এই কোর্সের যেকোনো ভিডিও, PDF, Lecture Sheet বা অন্য কোনো কনটেন্ট তৃতীয় পক্ষের সাথে শেয়ার, বিতরণ, রেকর্ড বা পুনঃপ্রকাশ করা সম্পূর্ণ নিষিদ্ধ এবং আইনত দণ্ডনীয়।</span>
           </div>
           <div class="refund-item">
-            <span class="refund-dot">■</span>
-            <span><strong style="color:#ff8e8e;">Legal Action:</strong> কপিরাইট লঙ্ঘনের ক্ষেত্রে CA Journey — Antor Academy বাংলাদেশের প্রচলিত ডিজিটাল নিরাপত্তা আইন ও কপিরাইট আইনে আইনগত ব্যবস্থা গ্রহণের অধিকার সংরক্ষণ করে।</span>
+            <span class="refund-dot">▪</span>
+            <span><strong style="color:#ff8e8e;">Legal Action:</strong> কপিরাইট লঙ্ঘনের ক্ষেত্রে CA Journey — Antor Academy বাংলাদেশের ডিজিটাল নিরাপত্তা আইন ও কপিরাইট আইনে আইনগত ব্যবস্থা গ্রহণের অধিকার সংরক্ষণ করে।</span>
           </div>
         </div>
 
-        <!-- ACKNOWLEDGEMENT CHECKBOX -->
+        <!-- ACKNOWLEDGEMENT -->
         <label class="check-wrap">
           <input type="checkbox" id="fagree">
           <span class="check-txt">
-            আমি উপরোক্ত <strong>Refund Policy</strong> সম্পূর্ণ পড়েছি এবং সম্মত আছি। আমি প্রতিশ্রুতি দিচ্ছি যে এই কোর্সের কোনো কনটেন্ট — ভিডিও, PDF, Lecture Sheet বা অন্য যেকোনো উপকরণ — কখনও তৃতীয় পক্ষের সাথে শেয়ার বা বিতরণ করব না। এই প্রতিশ্রুতি ভঙ্গ হলে আইনি পদক্ষেপ গ্রহণ করা হতে পারে, তা আমি সম্পূর্ণরূপে স্বীকার করছি।
+            আমি উপরোক্ত <strong>Refund Policy</strong> সম্পূর্ণ পড়েছি এবং সম্মত আছি। আমি আইনগত শপথ করছি যে এই কোর্সের কোনো কনটেন্ট — ভিডিও, PDF, Lecture Sheet বা অন্য যেকোনো উপকরণ — কখনও তৃতীয় পক্ষের সাথে শেয়ার বা বিতরণ করব না। প্রতিশ্রুতি ভঙ্গ হলে আইনি পদক্ষেপ গ্রহণ করা যাবে, তা আমি সম্পূর্ণরূপে স্বীকার করছি।
           </span>
         </label>
 
@@ -699,10 +795,10 @@ footer{
 
       <div id="success-box">
         <div class="tick">🎉</div>
-        <h3>ভর্তি আবেদন সম্পন্ন!</h3>
-        <p>তোমার আবেদন সফলভাবে জমা হয়েছে এবং <strong style="color:var(--gold-lt)">towfikicab@gmail.com</strong>-এ পাঠানো হয়েছে।<br>আমরা শীঘ্রই WhatsApp-এ যোগাযোগ করব।</p>
+        <h3>আবেদন জমা সম্পন্ন!</h3>
+        <p>তোমার তথ্য Google Sheets-এ সংরক্ষিত হয়েছে।<br>এখন নিচের বাটনে ক্লিক করে <strong style="color:var(--gold-lt)">পেমেন্টের Screenshot সহ</strong> WhatsApp-এ পাঠাও — ভর্তি নিশ্চিত হবে।</p>
         <a id="wa-go" class="btn-gold" href="#" target="_blank" rel="noopener" style="text-decoration:none;">
-          💬 WhatsApp-এ মেসেজ করো →
+          📸 Screenshot সহ WhatsApp-এ পাঠাও →
         </a>
       </div>
     </div>
@@ -710,7 +806,7 @@ footer{
     <div style="text-align:center;margin-top:32px;">
       <p style="color:var(--muted);font-size:.88rem;margin-bottom:14px;">সরাসরি WhatsApp-এ যোগাযোগ করতে চাও?</p>
       <a class="btn-gold"
-         href="https://wa.me/8801945135571?text=আমি%20CA%20Foundation%20কোর্সে%20ভর্তি%20হতে%20চাই।%20বিস্তারিত%20জানতে%20চাই।"
+         href="https://wa.me/8801945135571?text=আমি%20CA%20Foundation%20%26%20Admission%20Course-এ%20ভর্তি%20হতে%20চাই।%20বিস্তারিত%20জানতে%20চাই।"
          target="_blank" rel="noopener"
          style="text-decoration:none;">
         💬 সরাসরি WhatsApp করো
@@ -719,6 +815,7 @@ footer{
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="foot-brand">CA Journey — Antor Academy</div>
   <div class="foot-tag">সঠিক গাইডলাইন + দক্ষ মেন্টর = নিশ্চিত সফলতা 🚀</div>
@@ -749,11 +846,11 @@ async function handleEnroll(){
   const method = document.getElementById('fm').value;
   const txn    = document.getElementById('ft').value.trim();
   const amount = document.getElementById('famt').value.trim();
-  const file   = document.getElementById('ff').files[0];
   const agreed = document.getElementById('fagree').checked;
   const edu    = document.getElementById('fed').value;
   const msg    = document.getElementById('fmsg').value.trim();
 
+  // Validation
   if(!name)  { alert('অনুগ্রহ করে তোমার পুরো নাম লিখো।'); return; }
   if(!phone) { alert('মোবাইল নম্বর লিখো।'); return; }
   if(!email) { alert('ইমেইল ঠিকানা লিখো — এটি বাধ্যতামূলক।'); return; }
@@ -761,70 +858,57 @@ async function handleEnroll(){
   if(!method){ alert('পেমেন্ট মাধ্যম বেছে নাও।'); return; }
   if(!txn)   { alert('Transaction ID লিখো।'); return; }
   if(!amount){ alert('পেমেন্টের পরিমাণ লিখো।'); return; }
-  if(!file)  { alert('পেমেন্টের Screenshot আপলোড করো।'); return; }
   if(!agreed){ alert('ফর্ম সাবমিট করতে Refund Policy ও Anti-Piracy শর্তে সম্মতি দিতে হবে।'); return; }
 
   const btn = document.querySelector('.sub-btn');
   btn.disabled = true;
-  btn.textContent = '⏳ পাঠানো হচ্ছে...';
+  btn.textContent = '⏳ Google Sheets-এ পাঠানো হচ্ছে...';
 
-  // 1. Google Apps Script → Google Sheets
-  const sheetPayload = {
+  // Google Apps Script → Google Sheets
+  const payload = {
+    course:    'CA Foundation & Admission Course',
     name, phone, email, method, txn,
-    amount: amount + ' টাকা',
+    amount:    amount + ' টাকা',
     education: edu || 'উল্লেখ নেই',
-    message: msg || 'নেই',
-    agreed: 'হ্যাঁ — সম্মত',
+    message:   msg || 'নেই',
+    agreed:    'হ্যাঁ — সম্মত ✅',
     timestamp: new Date().toLocaleString('bn-BD', {timeZone:'Asia/Dhaka'})
   };
+
   try {
     await fetch(
       'https://script.google.com/macros/s/AKfycbxK1uJXZ82Ap5ltF73rZaptwHD28JuvWqkvdfhNu5SnNBqXcgfPgdGTQxQ_VZ5gfr7RJA/exec',
-      { method:'POST', mode:'no-cors', headers:{'Content-Type':'application/json'}, body:JSON.stringify(sheetPayload) }
+      {
+        method: 'POST',
+        mode:   'no-cors',
+        headers:{'Content-Type':'application/json'},
+        body:   JSON.stringify(payload)
+      }
     );
-  } catch(e){ console.warn('Sheet:', e); }
+  } catch(e){ console.warn('Sheets error:', e); }
 
-  // 2. Formspree → towfikicab@gmail.com (with screenshot)
-  const fd = new FormData();
-  fd.append('_replyto', 'towfikicab@gmail.com');
-  fd.append('_subject', '🎓 CA Foundation ভর্তি — ' + name);
-  fd.append('নাম', name);
-  fd.append('মোবাইল', phone);
-  fd.append('ইমেইল', email);
-  fd.append('পেমেন্ট মাধ্যম', method);
-  fd.append('Transaction ID', txn);
-  fd.append('পরিমাণ', amount + ' টাকা');
-  fd.append('শিক্ষাগত যোগ্যতা', edu || 'উল্লেখ নেই');
-  fd.append('বার্তা', msg || 'নেই');
-  fd.append('Refund Policy', 'সম্মত হয়েছে ✅');
-  fd.append('screenshot', file);
-  try {
-    await fetch('https://formspree.io/f/xwpblllw', {
-      method:'POST', body:fd, headers:{'Accept':'application/json'}
-    });
-  } catch(e){ console.warn('Formspree:', e); }
-
-  // 3. WhatsApp formatted message
-  let wa  = '🎓 *CA Foundation ভর্তি আবেদন*\n';
+  // Build WhatsApp message (with screenshot instruction)
+  let wa  = '🎓 *CA Foundation & Admission Course*\n';
   wa += '━━━━━━━━━━━━━━━━━━━\n';
+  wa += '📋 *ভর্তি আবেদন*\n\n';
   wa += '👤 নাম: ' + name + '\n';
   wa += '📱 মোবাইল: ' + phone + '\n';
   wa += '📧 ইমেইল: ' + email + '\n';
-  wa += '💳 পেমেন্ট: ' + method + '\n';
-  wa += '🔖 TXN ID: ' + txn + '\n';
+  wa += '💳 পেমেন্ট মাধ্যম: ' + method + '\n';
+  wa += '🔖 Transaction ID: ' + txn + '\n';
   wa += '💵 পরিমাণ: ' + amount + ' টাকা\n';
-  if(edu) wa += '🎓 শিক্ষা: ' + edu + '\n';
+  if(edu) wa += '🎓 শিক্ষাগত যোগ্যতা: ' + edu + '\n';
   if(msg) wa += '💬 বার্তা: ' + msg + '\n';
   wa += '━━━━━━━━━━━━━━━━━━━\n';
-  wa += '✅ Refund Policy ও Anti-Piracy শর্তে সম্মত\n';
-  wa += '📸 Screenshot সংযুক্ত।';
+  wa += '✅ Refund Policy ও Anti-Piracy শর্তে সম্মত\n\n';
+  wa += '📸 *পেমেন্টের Screenshot নিচে পাঠাচ্ছি।*';
 
   const waLink = 'https://wa.me/8801945135571?text=' + encodeURIComponent(wa);
   document.getElementById('wa-go').href = waLink;
   document.getElementById('form-body').style.display = 'none';
   document.getElementById('success-box').style.display = 'block';
-  setTimeout(() => window.open(waLink, '_blank'), 900);
+  setTimeout(() => window.open(waLink, '_blank'), 800);
 }
 </script>
 </body>
-                                       </html>
+      </html>
